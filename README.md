@@ -11,6 +11,7 @@ This allows you to share B2C instance configuration between your IDE and the B2C
 
 ## Installation
 
+> [!IMPORTANT]
 > **Note:** The B2C CLI packages are not yet published to npm. Until they are published, you must use the [Development Installation](#development-installation) method below.
 
 Install directly from GitHub (requires published npm packages):
