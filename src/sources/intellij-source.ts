@@ -16,7 +16,8 @@ import {existsSync, readFileSync} from 'node:fs';
 import {createDecipheriv} from 'node:crypto';
 import {join} from 'node:path';
 import {XMLParser} from 'fast-xml-parser';
-import type {ConfigSource, NormalizedConfig, ResolveConfigOptions} from '@salesforce/b2c-tooling-sdk/config';
+// TODO: Import from @salesforce/b2c-tooling-sdk/config once published to npm
+import type {ConfigSource, NormalizedConfig, ResolveConfigOptions} from '../types.js';
 
 const DEFAULT_PROJECT_FILE = './.idea/misc.xml';
 const DEFAULT_ALGORITHM = 'aes-192-ecb';

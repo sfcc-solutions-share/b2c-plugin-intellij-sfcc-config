@@ -4,7 +4,8 @@
  * This hook provides the IntelliJ SFCC plugin configuration source
  * to the B2C CLI configuration resolution system.
  */
-import type {ConfigSourcesHook} from '@salesforce/b2c-tooling-sdk/cli';
+// TODO: Import from @salesforce/b2c-tooling-sdk/cli once published to npm
+import type {ConfigSourcesHook} from '../types.js';
 import {IntelliJSource} from '../sources/intellij-source.js';
 
 /**

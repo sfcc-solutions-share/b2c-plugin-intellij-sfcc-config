@@ -11,10 +11,7 @@ This allows you to share B2C instance configuration between your IDE and the B2C
 
 ## Installation
 
-> [!IMPORTANT]
-> **Note:** The B2C CLI packages are not yet published to npm. Until they are published, you must use the [Development Installation](#development-installation) method below.
-
-Install directly from GitHub (requires published npm packages):
+Install directly from GitHub:
 
 ```bash
 b2c plugins install sfcc-solutions-share/b2c-plugin-intellij-sfcc-config
@@ -25,27 +22,22 @@ b2c plugins
 
 ### Development Installation
 
-For local development (required until B2C CLI packages are published to npm):
+For local development:
 
 ```bash
 # Clone the repository
 git clone https://github.com/sfcc-solutions-share/b2c-plugin-intellij-sfcc-config.git
 cd b2c-plugin-intellij-sfcc-config
 
-# Update package.json to use local SDK path
-# Change @salesforce/b2c-tooling-sdk in devDependencies to:
-#   "file:/path/to/b2c-developer-tooling/packages/b2c-tooling-sdk"
-
 # Install dependencies and build
 npm install
 npm run build
 
-# Link to B2C CLI (from the b2c-developer-tooling directory)
-cd /path/to/b2c-developer-tooling
-./packages/b2c-cli/bin/dev.js plugins link /path/to/b2c-plugin-intellij-sfcc-config
+# Link to B2C CLI
+b2c plugins link .
 
 # Verify installation
-./packages/b2c-cli/bin/dev.js plugins
+b2c plugins
 ```
 
 ## Usage

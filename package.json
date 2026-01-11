@@ -24,12 +24,10 @@
     "fast-xml-parser": "^4.5.1"
   },
   "peerDependencies": {
-    "@oclif/core": "^4",
-    "@salesforce/b2c-tooling-sdk": ">=0.0.1-preview"
+    "@oclif/core": "^4"
   },
   "devDependencies": {
     "@oclif/core": "^4",
-    "@salesforce/b2c-tooling-sdk": "^0.0.1-preview",
     "@types/node": "^22",
     "typescript": "^5"
   },

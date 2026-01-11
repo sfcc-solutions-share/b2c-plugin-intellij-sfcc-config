@@ -24,3 +24,4 @@
  * @module b2c-plugin-intellij-sfcc-config
  */
 export {IntelliJSource} from './sources/intellij-source.js';
+export type {ConfigSource, NormalizedConfig, ResolveConfigOptions} from './types.js';
