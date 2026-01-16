@@ -17,7 +17,7 @@ import {createDecipheriv} from 'node:crypto';
 import {join} from 'node:path';
 import {XMLParser} from 'fast-xml-parser';
 // TODO: Import from @salesforce/b2c-tooling-sdk/config once published to npm
-import type {ConfigSource, NormalizedConfig, ResolveConfigOptions} from '../types.js';
+import type {ConfigSource, ConfigLoadResult, NormalizedConfig, ResolveConfigOptions} from '../types.js';
 
 const DEFAULT_PROJECT_FILE = './.idea/misc.xml';
 const DEFAULT_ALGORITHM = 'aes-192-ecb';
@@ -185,15 +185,12 @@ function findClientSecret(credentials: Credentials, clientId: string): string | 
 export class IntelliJSource implements ConfigSource {
   readonly name = 'intellij-sfcc';
 
-  private projectFilePath?: string;
-
   /**
    * Load configuration from IntelliJ SFCC plugin settings.
    */
-  load(options: ResolveConfigOptions): NormalizedConfig | undefined {
+  load(options: ResolveConfigOptions): ConfigLoadResult | undefined {
     // Get project file path from env var or default
     const projectFile = process.env.SFCC_INTELLIJ_PROJECT_FILE ?? join(process.cwd(), DEFAULT_PROJECT_FILE);
-    this.projectFilePath = projectFile;
 
     // Parse connection settings
     const connectionSettings = getConnectionSettings(projectFile);
@@ -260,13 +257,9 @@ export class IntelliJSource implements ConfigSource {
       }
     }
 
-    return config;
-  }
-
-  /**
-   * Get the path to the project file for diagnostics.
-   */
-  getPath(): string | undefined {
-    return this.projectFilePath;
+    return {
+      config,
+      location: projectFile,
+    };
   }
 }
