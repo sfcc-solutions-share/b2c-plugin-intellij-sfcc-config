@@ -81,7 +81,7 @@ function getConnectionSettings(filename: string): ConnectionSettings | undefined
   const parser = new XMLParser({
     attributeNamePrefix: '',
     ignoreAttributes: false,
-    processEntities: true,
+    processEntities: {enabled: true, maxTotalExpansions: 1_000_000},
     allowBooleanAttributes: true,
     preserveOrder: true,
     textNodeName: '_',
