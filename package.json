@@ -23,7 +23,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "fast-xml-parser": "^4.5.1"
+    "fast-xml-parser": "^4.5.6"
   },
   "peerDependencies": {
     "@oclif/core": "^4"
